@@ -1,0 +1,13 @@
+class Solution:
+    def insertionSort(self, pairs: List[Pair]) -> List[List[Pair]]:
+        res = []
+        for i in range(len(pairs)):
+            j = i - 1
+            while j >= 0 and pairs[j + 1].key < pairs[j].key:
+                # temp = pairs[j + 1]
+                pairs[j + 1], pairs[j] = pairs[j], pairs[j+1]
+                # pairs[j] = temp
+                j -= 1
+            res.append(list(pairs))
+
+        return res
